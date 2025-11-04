@@ -239,18 +239,20 @@ export default function UploadQuestionsModal({
       }
 
       // Transform questions to match the expected format
-      const formattedQuestions: Question[] = questionsArray.map((q) => ({
-        question_number: q.question_number,
-        description: q.description,
-        options: q.options,
-        correct_answer: q.correct_answer,
-        hints: q.hints || [],
-        difficulty: q.difficulty as QuestionDifficultyType,
-        estimated_time_in_ms: q.estimated_time_in_ms,
-        solution_steps: q.solution_steps || [],
-        tags: q.tags as QuestionTagType[],
-        type: q.type as QuestionType,
-      }));
+      const formattedQuestions: Question[] = questionsArray.map(
+        (q: Question) => ({
+          question_number: q.question_number,
+          description: q.description,
+          options: q.options,
+          correct_answer: q.correct_answer,
+          hints: q.hints || [],
+          difficulty: q.difficulty as QuestionDifficultyType,
+          estimated_time_in_ms: q.estimated_time_in_ms,
+          solution_steps: q.solution_steps || [],
+          tags: q.tags as QuestionTagType[],
+          type: q.type as QuestionType,
+        }),
+      );
 
       // Prepare upload data with suite fields
       const uploadData: UploadData = {

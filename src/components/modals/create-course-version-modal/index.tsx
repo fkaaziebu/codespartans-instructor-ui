@@ -68,7 +68,7 @@ export default function CreateCourseVersionModal({
             assigned_admin: string | undefined;
           }[]
         | undefined = [
-        ...versions,
+        ...(versions || []),
         {
           id: version.data?.addCourseVersion.id,
           version_number: version.data?.addCourseVersion.version_number,

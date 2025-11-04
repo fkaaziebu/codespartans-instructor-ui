@@ -13,6 +13,7 @@ import { useGetInstructorVersionReview } from "@/common/hooks/queries";
 import { UpdateIssueModal, UpdateQuestionModal } from "@/components/modals";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function ReviewDetailPage() {
   const [isUpdateIssueModalOpen, setIsUpdateIssueModalOpen] = useState(false);
@@ -78,13 +79,21 @@ export default function ReviewDetailPage() {
     }
   };
 
-  const handleUpdateIssue = (issue: Issue) => {
-    const filterredIssues = issues.filter((iss) => iss.id !== issue.id);
-    setIssues([...(filterredIssues || []), issue]);
+  const handleUpdateIssue = (issue: Issue | undefined) => {
+    const filterredIssues = issues.filter((iss) => iss.id !== issue?.id);
+    setIssues(
+      [...(filterredIssues || []), issue].filter(
+        (issue) => issue !== undefined,
+      ),
+    );
   };
 
-  const handleUpdateQuestion = (question: Question) => {
-    setQuestions(questions.map((q) => (q.id === question.id ? question : q)));
+  const handleUpdateQuestion = (question: Question | undefined) => {
+    setQuestions(
+      questions
+        .map((q) => (q.id === question?.id ? question : q))
+        .filter((q) => q !== undefined),
+    );
   };
 
   const handleQuestionEditClick = (question: Question) => {
@@ -371,13 +380,14 @@ export default function ReviewDetailPage() {
                                       {issue.description}
                                     </p>
                                     <div
-                                      className={
-                                        [
+                                      className={cn(
+                                        ([
                                           IssueStatusType.Open,
                                           IssueStatusType.InProgress,
-                                        ].includes(issue.status) &&
-                                        "cursor-pointer"
-                                      }
+                                        ].includes(issue.status) ||
+                                          false) &&
+                                          "cursor-pointer",
+                                      )}
                                       onClick={(e) => {
                                         e.stopPropagation();
                                         handleIssueClick(

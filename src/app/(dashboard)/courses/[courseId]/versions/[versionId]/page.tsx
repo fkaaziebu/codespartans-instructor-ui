@@ -1,7 +1,7 @@
 "use client";
 import { ArrowLeft, Edit2, Plus, Trash2, Upload } from "lucide-react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   QuestionDifficultyType,
   QuestionTagType,
@@ -163,6 +163,14 @@ export default function CourseVersionDetailPage() {
       </Badge>
     );
   };
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+      router.push("/login");
+    }
+  }, []);
 
   return (
     <div className="flex min-h-screen bg-gray-50">

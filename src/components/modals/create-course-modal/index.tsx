@@ -95,11 +95,11 @@ export default function CreateCourseModal({
     },
   });
   const { createCourse } = useCreateCourse();
-  const organizationId = sessionStorage.getItem("organizationId");
 
   const selectedDomains = watch("domains") || [];
 
   const onSubmit: SubmitHandler<CreateCourseFormInputs> = async (data) => {
+    const organizationId = sessionStorage.getItem("organizationId");
     const course = await createCourse({
       variables: {
         organizationId: organizationId || "",
@@ -123,7 +123,7 @@ export default function CreateCourseModal({
           status: "approved" | "pending" | undefined;
         }[]
       | undefined = [
-      ...courses,
+      ...(courses || []),
       {
         id: course.data?.createCourse.id || "",
         title: course.data?.createCourse.title,
@@ -242,7 +242,7 @@ export default function CreateCourseModal({
               </label>
               <Select
                 onValueChange={(value) =>
-                  setValue("currency", value.toUpperCase())
+                  setValue("currency", value.toUpperCase() as CurrencyType)
                 }
               >
                 <SelectTrigger
@@ -297,7 +297,9 @@ export default function CreateCourseModal({
           <div className="flex flex-col space-y-2">
             <label className="text-sm font-bold text-gray-800">Level</label>
             <Select
-              onValueChange={(value) => setValue("level", value.toUpperCase())}
+              onValueChange={(value) =>
+                setValue("level", value.toUpperCase() as LevelType)
+              }
             >
               <SelectTrigger
                 className={cn(
@@ -329,10 +331,12 @@ export default function CreateCourseModal({
                 <button
                   key={domain}
                   type="button"
-                  onClick={() => toggleDomain(domain.toUpperCase())}
+                  onClick={() =>
+                    toggleDomain(domain.toUpperCase() as DomainType)
+                  }
                   className={cn(
                     "px-4 py-2 rounded-md text-sm font-medium transition-colors",
-                    selectedDomains.includes(domain.toUpperCase())
+                    selectedDomains.includes(domain.toUpperCase() as DomainType)
                       ? "bg-gray-800 text-white"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200",
                   )}

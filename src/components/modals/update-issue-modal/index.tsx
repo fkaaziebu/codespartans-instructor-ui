@@ -44,7 +44,7 @@ export default function UpdateIssueModal({
   open: boolean;
   onClose: () => void;
   issue: Issue | undefined;
-  handleUpdateIssue: (issue: Issue) => void;
+  handleUpdateIssue: (issue: Issue | undefined) => void;
 }) {
   const {
     register,
