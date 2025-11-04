@@ -1,0 +1,16 @@
+query ListCourses($searchTerm: String, $pagination: PaginationInput) {
+    listCourses(searchTerm: $searchTerm, pagination: $pagination) {
+        edges {
+            node {
+                id
+                title
+                approved_version {
+                    id
+                }
+                versions {
+                    id
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,428 @@
+{
+  "suite_title": "React Fundamentals & Advanced Concepts 2",
+  "suite_description": "Comprehensive test covering React basics, hooks, performance optimization, and advanced patterns. Perfect for developers looking to validate their React knowledge from beginner to expert level.",
+  "suite_keywords": [
+    "React",
+    "Hooks",
+    "JSX",
+    "Virtual DOM",
+    "State Management",
+    "Performance",
+    "Components"
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "description": "What is ReactJS?",
+      "options": ["A library", "A framework", "A language", "A database"],
+      "correct_answer": "A library",
+      "hints": ["Think about JavaScript ecosystem", "It's for building UIs"],
+      "difficulty": "EASY",
+      "estimated_time_in_ms": 30000,
+      "solution_steps": [
+        "React is a JavaScript library",
+        "Used for building user interfaces"
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 2,
+      "description": "What does JSX stand for?",
+      "options": [
+        "JavaScript XML",
+        "Java Syntax Extension",
+        "JSON eXtension",
+        "JavaScript Express"
+      ],
+      "correct_answer": "JavaScript XML",
+      "hints": ["It's related to XML", "Used in React components"],
+      "difficulty": "EASY",
+      "estimated_time_in_ms": 25000,
+      "solution_steps": [
+        "JSX stands for JavaScript XML",
+        "It allows HTML-like syntax in JavaScript"
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 3,
+      "description": "Which hook is used to manage state in functional components?",
+      "options": ["useEffect", "useState", "useContext", "useReducer"],
+      "correct_answer": "useState",
+      "hints": [
+        "Think about state management",
+        "Most commonly used for simple state"
+      ],
+      "difficulty": "EASY",
+      "estimated_time_in_ms": 20000,
+      "solution_steps": [
+        "useState is the primary hook for state management",
+        "It returns a state variable and a setter function"
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 4,
+      "description": "What is the Virtual DOM?",
+      "options": [
+        "A copy of the real DOM kept in memory",
+        "A database",
+        "A CSS framework",
+        "A JavaScript library"
+      ],
+      "correct_answer": "A copy of the real DOM kept in memory",
+      "hints": [
+        "It's related to performance optimization",
+        "React uses it for efficient updates"
+      ],
+      "difficulty": "MEDIUM",
+      "estimated_time_in_ms": 40000,
+      "solution_steps": [
+        "Virtual DOM is a lightweight copy of the actual DOM",
+        "React compares virtual DOM with previous version",
+        "Only changed elements are updated in real DOM"
+      ],
+      "tags": ["TAG_WEB", "TAG_ALGORITHM"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 5,
+      "description": "Which method is used to update state in class components?",
+      "options": [
+        "this.setState()",
+        "this.updateState()",
+        "this.changeState()",
+        "this.modifyState()"
+      ],
+      "correct_answer": "this.setState()",
+      "hints": ["It's a built-in method", "Starts with 'set'"],
+      "difficulty": "EASY",
+      "estimated_time_in_ms": 25000,
+      "solution_steps": [
+        "Class components use this.setState()",
+        "It merges the new state with the old state"
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 6,
+      "description": "What is prop drilling?",
+      "options": [
+        "Passing props through multiple component levels",
+        "Creating new props",
+        "Deleting props",
+        "Modifying props"
+      ],
+      "correct_answer": "Passing props through multiple component levels",
+      "hints": [
+        "Related to component hierarchy",
+        "Can be solved with Context API"
+      ],
+      "difficulty": "MEDIUM",
+      "estimated_time_in_ms": 35000,
+      "solution_steps": [
+        "Prop drilling means passing props through intermediate components",
+        "The intermediate components don't use the props",
+        "Can lead to maintenance issues"
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 7,
+      "description": "Which hook is used for side effects?",
+      "options": ["useState", "useEffect", "useMemo", "useCallback"],
+      "correct_answer": "useEffect",
+      "hints": ["Think about lifecycle methods", "Runs after render"],
+      "difficulty": "EASY",
+      "estimated_time_in_ms": 20000,
+      "solution_steps": [
+        "useEffect is for side effects",
+        "It runs after component renders",
+        "Can be used for data fetching, subscriptions, etc."
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 8,
+      "description": "What does the key prop do in React lists?",
+      "options": [
+        "Helps React identify which items changed",
+        "Styles the element",
+        "Creates unique IDs",
+        "Validates data"
+      ],
+      "correct_answer": "Helps React identify which items changed",
+      "hints": ["Important for list rendering", "Improves performance"],
+      "difficulty": "MEDIUM",
+      "estimated_time_in_ms": 35000,
+      "solution_steps": [
+        "Key prop helps React track elements in lists",
+        "Enables efficient updates and re-renders",
+        "Should be unique among siblings"
+      ],
+      "tags": ["TAG_WEB", "TAG_ALGORITHM"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 9,
+      "description": "What is the purpose of React.Fragment?",
+      "options": [
+        "Group multiple elements without adding extra DOM nodes",
+        "Create animations",
+        "Handle errors",
+        "Manage state"
+      ],
+      "correct_answer": "Group multiple elements without adding extra DOM nodes",
+      "hints": ["Alternative to div wrapper", "Keeps DOM clean"],
+      "difficulty": "MEDIUM",
+      "estimated_time_in_ms": 30000,
+      "solution_steps": [
+        "Fragment allows grouping children without extra nodes",
+        "Shorthand syntax is <>...</>",
+        "Helps keep DOM structure clean"
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 10,
+      "description": "What is the Context API used for?",
+      "options": [
+        "Sharing data across components without prop drilling",
+        "Styling components",
+        "Routing",
+        "Form validation"
+      ],
+      "correct_answer": "Sharing data across components without prop drilling",
+      "hints": ["Solves prop drilling problem", "Global state management"],
+      "difficulty": "MEDIUM",
+      "estimated_time_in_ms": 40000,
+      "solution_steps": [
+        "Context API provides global state",
+        "Avoids passing props through every level",
+        "Uses Provider and Consumer pattern"
+      ],
+      "tags": ["TAG_WEB", "TAG_DATA_STRUCTURE"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 11,
+      "description": "What does useMemo do?",
+      "options": [
+        "Memoizes expensive calculations",
+        "Manages state",
+        "Handles side effects",
+        "Creates refs"
+      ],
+      "correct_answer": "Memoizes expensive calculations",
+      "hints": ["Performance optimization", "Caches results"],
+      "difficulty": "HARD",
+      "estimated_time_in_ms": 45000,
+      "solution_steps": [
+        "useMemo memoizes computed values",
+        "Prevents unnecessary recalculations",
+        "Only recomputes when dependencies change"
+      ],
+      "tags": ["TAG_WEB", "TAG_ALGORITHM"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 12,
+      "description": "What is the difference between controlled and uncontrolled components?",
+      "options": [
+        "Controlled components have React managing their state",
+        "Uncontrolled components are faster",
+        "Controlled components can't use refs",
+        "There is no difference"
+      ],
+      "correct_answer": "Controlled components have React managing their state",
+      "hints": ["Related to form inputs", "State management approach"],
+      "difficulty": "MEDIUM",
+      "estimated_time_in_ms": 50000,
+      "solution_steps": [
+        "Controlled components store form data in React state",
+        "Uncontrolled components store data in the DOM",
+        "Controlled components provide more control"
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 13,
+      "description": "What does useCallback do?",
+      "options": [
+        "Memoizes callback functions",
+        "Creates new callbacks",
+        "Handles API calls",
+        "Manages component lifecycle"
+      ],
+      "correct_answer": "Memoizes callback functions",
+      "hints": ["Similar to useMemo", "For functions instead of values"],
+      "difficulty": "HARD",
+      "estimated_time_in_ms": 45000,
+      "solution_steps": [
+        "useCallback memoizes function references",
+        "Prevents unnecessary re-creations of functions",
+        "Useful when passing callbacks to optimized child components"
+      ],
+      "tags": ["TAG_WEB", "TAG_ALGORITHM"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 14,
+      "description": "What is React.memo()?",
+      "options": [
+        "A higher-order component for memoization",
+        "A hook for state",
+        "A routing component",
+        "A styling tool"
+      ],
+      "correct_answer": "A higher-order component for memoization",
+      "hints": ["Wraps components", "Prevents unnecessary re-renders"],
+      "difficulty": "HARD",
+      "estimated_time_in_ms": 40000,
+      "solution_steps": [
+        "React.memo() is a HOC for performance optimization",
+        "Only re-renders when props change",
+        "Similar to PureComponent for functional components"
+      ],
+      "tags": ["TAG_WEB", "TAG_ALGORITHM"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 15,
+      "description": "What are React portals used for?",
+      "options": [
+        "Render children into a DOM node outside parent hierarchy",
+        "Create animations",
+        "Manage routing",
+        "Handle errors"
+      ],
+      "correct_answer": "Render children into a DOM node outside parent hierarchy",
+      "hints": ["Useful for modals and tooltips", "Breaks out of parent DOM"],
+      "difficulty": "HARD",
+      "estimated_time_in_ms": 50000,
+      "solution_steps": [
+        "Portals render children into different DOM node",
+        "Useful for modals, tooltips, and overlays",
+        "Created with ReactDOM.createPortal()"
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 16,
+      "description": "What is the purpose of useRef?",
+      "options": [
+        "Access DOM elements and persist values across renders",
+        "Manage state",
+        "Handle side effects",
+        "Create context"
+      ],
+      "correct_answer": "Access DOM elements and persist values across renders",
+      "hints": ["Doesn't trigger re-renders", "Direct DOM access"],
+      "difficulty": "MEDIUM",
+      "estimated_time_in_ms": 35000,
+      "solution_steps": [
+        "useRef creates mutable reference",
+        "Doesn't cause re-renders when changed",
+        "Can access DOM elements directly"
+      ],
+      "tags": ["TAG_WEB", "TAG_GENERAL"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 17,
+      "description": "What is lazy loading in React?",
+      "options": [
+        "Loading components only when needed",
+        "Slow rendering",
+        "Delayed state updates",
+        "Background data fetching"
+      ],
+      "correct_answer": "Loading components only when needed",
+      "hints": ["Improves initial load time", "Uses React.lazy()"],
+      "difficulty": "MEDIUM",
+      "estimated_time_in_ms": 40000,
+      "solution_steps": [
+        "Lazy loading delays component loading",
+        "Reduces initial bundle size",
+        "Used with React.lazy() and Suspense"
+      ],
+      "tags": ["TAG_WEB", "TAG_SYSTEM"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 18,
+      "description": "What is the purpose of Error Boundaries?",
+      "options": [
+        "Catch JavaScript errors in component tree",
+        "Validate props",
+        "Handle API errors",
+        "Manage routing errors"
+      ],
+      "correct_answer": "Catch JavaScript errors in component tree",
+      "hints": ["Prevents app crashes", "Class component feature"],
+      "difficulty": "HARD",
+      "estimated_time_in_ms": 45000,
+      "solution_steps": [
+        "Error Boundaries catch errors in child components",
+        "Prevents entire app from crashing",
+        "Implemented with componentDidCatch lifecycle method"
+      ],
+      "tags": ["TAG_WEB", "TAG_SYSTEM"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 19,
+      "description": "What is the difference between useEffect and useLayoutEffect?",
+      "options": [
+        "useLayoutEffect runs synchronously after DOM mutations",
+        "They are the same",
+        "useEffect is faster",
+        "useLayoutEffect is deprecated"
+      ],
+      "correct_answer": "useLayoutEffect runs synchronously after DOM mutations",
+      "hints": [
+        "Timing of execution differs",
+        "useLayoutEffect blocks visual updates"
+      ],
+      "difficulty": "HARD",
+      "estimated_time_in_ms": 60000,
+      "solution_steps": [
+        "useEffect runs asynchronously after paint",
+        "useLayoutEffect runs synchronously after DOM mutations",
+        "useLayoutEffect can cause performance issues if overused"
+      ],
+      "tags": ["TAG_WEB", "TAG_ALGORITHM"],
+      "type": "MULTIPLE_CHOICE"
+    },
+    {
+      "question_number": 20,
+      "description": "What is reconciliation in React?",
+      "options": [
+        "The process of updating the DOM efficiently",
+        "Creating components",
+        "Managing state",
+        "Handling events"
+      ],
+      "correct_answer": "The process of updating the DOM efficiently",
+      "hints": ["Related to Virtual DOM", "Diffing algorithm"],
+      "difficulty": "HARD",
+      "estimated_time_in_ms": 55000,
+      "solution_steps": [
+        "Reconciliation is React's diffing algorithm",
+        "Compares Virtual DOM with previous version",
+        "Determines minimal set of changes needed"
+      ],
+      "tags": ["TAG_WEB", "TAG_ALGORITHM"],
+      "type": "MULTIPLE_CHOICE"
+    }
+  ]
+}

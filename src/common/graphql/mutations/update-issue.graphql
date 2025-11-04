@@ -1,0 +1,16 @@
+mutation UpdateIssue(
+    $issueId: String!
+    $issueStatus: IssueStatusType!
+    $response: String!
+) {
+    updateIssue(
+        issueId: $issueId
+        issueStatus: $issueStatus
+        response: $response
+    ) {
+        id
+        description
+        response
+        status
+    }
+}

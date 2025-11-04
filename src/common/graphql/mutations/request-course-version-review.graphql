@@ -1,0 +1,5 @@
+mutation RequestCourseVersionReview($versionId: String!) {
+    requestCourseVersionReview(versionId: $versionId) {
+        id
+    }
+}

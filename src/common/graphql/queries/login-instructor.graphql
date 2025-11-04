@@ -1,0 +1,11 @@
+query LoginInstructor($email: String!, $password: String!) {
+    loginInstructor(email: $email, password: $password) {
+        id
+        email
+        name
+        token
+        organizations {
+            id
+        }
+    }
+}

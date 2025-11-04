@@ -1,0 +1,26 @@
+query GetInstructorCourseVersion($versionId: String!) {
+    getInstructorCourseVersion(versionId: $versionId) {
+        id
+        version_number
+        status
+        course {
+            title
+            instructor {
+                name
+            }
+        }
+        review_request {
+            inserted_at
+        }
+        reviews {
+            id
+            title
+            message
+            inserted_at
+            status
+            total_issues
+        }
+        total_questions
+        total_reviews
+    }
+}

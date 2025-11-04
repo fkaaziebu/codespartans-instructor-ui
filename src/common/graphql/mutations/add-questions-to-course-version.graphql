@@ -1,0 +1,17 @@
+mutation AddQuestionsToCourseVersion(
+    $versionId: String!
+    $questions: [QuestionInput!]!
+    $suiteTitle: String!
+    $suiteDescription: String!
+    $suiteKeywords: [String!]!
+) {
+    addQuestionsToCourseVersion(
+        versionId: $versionId
+        questions: $questions
+        suiteTitle: $suiteTitle
+        suiteDescription: $suiteDescription
+        suiteKeywords: $suiteKeywords
+    ) {
+        id
+    }
+}

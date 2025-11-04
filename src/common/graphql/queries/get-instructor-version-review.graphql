@@ -1,0 +1,34 @@
+query GetInstructorVersionReview($reviewId: String!) {
+    getInstructorVersionReview(reviewId: $reviewId) {
+        id
+        inserted_at
+        message
+        status
+        title
+        course_version {
+            version_number
+            course {
+                title
+            }
+            questions {
+                id
+                question_number
+                correct_answer
+                description
+                difficulty
+                estimated_time_in_ms
+                hints
+                options
+                solution_steps
+                tags
+                type
+            }
+        }
+        issues {
+            id
+            description
+            status
+            response
+        }
+    }
+}

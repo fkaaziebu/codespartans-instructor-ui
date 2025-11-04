@@ -1,0 +1,8 @@
+mutation AddCourseVersion($courseId: String!) {
+    addCourseVersion(courseId: $courseId) {
+        id
+        version_number
+        status
+        inserted_at
+    }
+}

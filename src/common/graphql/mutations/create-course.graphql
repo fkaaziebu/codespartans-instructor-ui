@@ -1,0 +1,6 @@
+mutation CreateCourse($organizationId: String!, $courseInfo: CourseInfoInput!) {
+    createCourse(organizationId: $organizationId, courseInfo: $courseInfo) {
+        id
+        title
+    }
+}

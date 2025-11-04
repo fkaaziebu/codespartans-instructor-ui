@@ -1,0 +1,31 @@
+query GetCourse($courseId: String!) {
+    getCourse(courseId: $courseId) {
+        id
+        title
+        description
+        approved_version {
+            id
+            version_number
+            status
+            inserted_at
+            questions {
+                id
+            }
+            assigned_admin {
+                name
+            }
+        }
+        versions {
+            id
+            version_number
+            inserted_at
+            status
+            assigned_admin {
+                name
+            }
+            questions {
+                id
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+mutation UpdateQuestion($questionId: String!, $question: QuestionInput!) {
+    updateQuestion(questionId: $questionId, question: $question) {
+        id
+        correct_answer
+        description
+        difficulty
+        estimated_time_in_ms
+        hints
+        options
+        question_number
+        solution_steps
+        tags
+        type
+    }
+}
