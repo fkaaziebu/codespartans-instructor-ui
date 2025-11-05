@@ -264,11 +264,16 @@ export type Mutation = {
   createCategory: Category;
   createCheckout: Checkout;
   createCourse: Course;
+  endTest: Test;
+  pauseTest: Test;
   registerAdmin: Admin;
   registerInstructor: Instructor;
   registerOrganization: RegisterResponse;
   registerStudent: RegisterResponse;
   requestCourseVersionReview: ReviewRequest;
+  resumeTest: Test;
+  startTest: Test;
+  submitAnswer: SubmittedAnswer;
   updateCourse: Course;
   updateIssue: Issue;
   updateQuestion: Question;
@@ -356,6 +361,16 @@ export type MutationCreateCourseArgs = {
 };
 
 
+export type MutationEndTestArgs = {
+  testId: Scalars['String']['input'];
+};
+
+
+export type MutationPauseTestArgs = {
+  testId: Scalars['String']['input'];
+};
+
+
 export type MutationRegisterAdminArgs = {
   email: Scalars['String']['input'];
   name: Scalars['String']['input'];
@@ -387,6 +402,24 @@ export type MutationRegisterStudentArgs = {
 
 export type MutationRequestCourseVersionReviewArgs = {
   versionId: Scalars['String']['input'];
+};
+
+
+export type MutationResumeTestArgs = {
+  testId: Scalars['String']['input'];
+};
+
+
+export type MutationStartTestArgs = {
+  suiteId: Scalars['String']['input'];
+};
+
+
+export type MutationSubmitAnswerArgs = {
+  answer: Scalars['String']['input'];
+  questionId: Scalars['String']['input'];
+  testId: Scalars['String']['input'];
+  timeRange: Scalars['String']['input'];
 };
 
 
@@ -459,7 +492,9 @@ export type Query = {
   getInstructorCourseVersion: VersionResponse;
   getInstructorVersionReview: Review;
   getOrganizationCourse: Course;
+  getQuestion: Question;
   getStats: StatsResponse;
+  getSubscribedCourseDetails: Course;
   getVersionReview: Review;
   listAdmins: AdminConnection;
   listAssignedVersions: VersionConnection;
@@ -497,6 +532,16 @@ export type QueryGetInstructorVersionReviewArgs = {
 
 
 export type QueryGetOrganizationCourseArgs = {
+  courseId: Scalars['String']['input'];
+};
+
+
+export type QueryGetQuestionArgs = {
+  testId: Scalars['String']['input'];
+};
+
+
+export type QueryGetSubscribedCourseDetailsArgs = {
   courseId: Scalars['String']['input'];
 };
 
@@ -744,6 +789,48 @@ export type StudentLoginResponse = {
   token: Scalars['String']['output'];
 };
 
+export type SubmittedAnswer = {
+  __typename?: 'SubmittedAnswer';
+  answer_provided: Scalars['String']['output'];
+  hints_used: Array<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  is_flagged: Scalars['Boolean']['output'];
+  question?: Maybe<Question>;
+  question_id: Scalars['String']['output'];
+  test?: Maybe<Test>;
+};
+
+/** Suite difficulty */
+export enum SuiteDifficultyType {
+  Advanced = 'ADVANCED',
+  Beginner = 'BEGINNER',
+  Intermediate = 'INTERMEDIATE'
+}
+
+export type Test = {
+  __typename?: 'Test';
+  id: Scalars['ID']['output'];
+  status: TestStatusType;
+  submitted_answers?: Maybe<Array<SubmittedAnswer>>;
+};
+
+/** Test status */
+export enum TestStatusType {
+  Ended = 'ENDED',
+  OnGoing = 'ON_GOING',
+  Paused = 'PAUSED'
+}
+
+export type TestSuite = {
+  __typename?: 'TestSuite';
+  description: Scalars['String']['output'];
+  difficulty: SuiteDifficultyType;
+  id: Scalars['ID']['output'];
+  keywords: Array<Scalars['String']['output']>;
+  questions: Array<Question>;
+  title: Scalars['String']['output'];
+};
+
 export type UpdateCourseInfoInput = {
   avatar_url?: InputMaybe<Scalars['String']['input']>;
   currency?: InputMaybe<CurrencyType>;
@@ -763,6 +850,7 @@ export type Version = {
   review_request?: Maybe<ReviewRequest>;
   reviews?: Maybe<Array<Review>>;
   status: VersionStatusType;
+  test_suites?: Maybe<Array<TestSuite>>;
   updated_at: Scalars['DateTime']['output'];
   version_number: Scalars['Float']['output'];
 };
@@ -784,6 +872,7 @@ export type VersionResponse = {
   review_request?: Maybe<ReviewRequest>;
   reviews: Array<ReviewResponse>;
   status: VersionStatusType;
+  test_suites?: Maybe<Array<TestSuite>>;
   total_questions: Scalars['Float']['output'];
   total_reviews: Scalars['Float']['output'];
   updated_at: Scalars['DateTime']['output'];
