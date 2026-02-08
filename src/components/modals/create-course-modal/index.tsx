@@ -131,7 +131,7 @@ export default function CreateCourseModal({
       }, 200);
 
       const response = await axios.post(
-        "http://3.68.98.186:4000/v1/images/upload",
+        `${process.env.REST_BASE_URL}/v1/images/upload`,
         formData,
         {
           headers: {
@@ -151,7 +151,7 @@ export default function CreateCourseModal({
       }
 
       setUploadProgress(100);
-      const avatarUrl = `http://3.68.98.186:4000/v1/images/${data.path}`;
+      const avatarUrl = `${process.env.REST_BASE_URL}/v1/images/${data.path}`;
       setValue("avatar_url", avatarUrl);
       setUploadComplete(true);
 
