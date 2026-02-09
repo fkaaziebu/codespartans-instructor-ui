@@ -13,6 +13,7 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+ENV REST_BASE_URL=http://138.68.167.20:4000
 ENV GRAPHQL_BASE_URL=http://138.68.167.20:4000/graphql
 ENV GRAPHQL_WS_BASE_URL=http://138.68.167.20:4000/graphql-ws
 ENV NEXT_TELEMETRY_DISABLED=1
