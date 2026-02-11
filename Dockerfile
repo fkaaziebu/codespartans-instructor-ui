@@ -13,9 +13,9 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-ENV REST_BASE_URL=http://64.227.44.83:4000
-ENV GRAPHQL_BASE_URL=http://64.227.44.83:4000/graphql
-ENV GRAPHQL_WS_BASE_URL=http://64.227.44.83:4000/graphql-ws
+ENV REST_BASE_URL=http://ec2-35-156-40-144.eu-central-1.compute.amazonaws.com:4000
+ENV GRAPHQL_BASE_URL=http://ec2-35-156-40-144.eu-central-1.compute.amazonaws.com:4000/graphql
+ENV GRAPHQL_WS_BASE_URL=http://ec2-35-156-40-144.eu-central-1.compute.amazonaws.com:4000/graphql-ws
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
